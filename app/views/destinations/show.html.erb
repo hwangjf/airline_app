@@ -1,0 +1,12 @@
+<h1>Welcome to <%= @destination.city %></h1>
+
+<% if @destination.airlines != nil %>
+  <h3>This city's airlines:</h3>
+  <ul>
+    <% @destination.airlines do |airline| %>
+    <li> <%= link_to airline.name, airline %>  </li>
+    <% end %>
+  </ul>
+<% end %>
+
+<%= link_to "All airlines", airlines_path %>

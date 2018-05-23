@@ -1,0 +1,15 @@
+<h1>Edit this airline: <%= @airline.name %> </h1>
+
+<%= link_to "Cancel", airlines_path %>
+
+<%= render "errors/flash_errors" %>
+<%= form_for @airline do |f| %>
+  <%= f.label :name %>
+  <%= f.text_field :name %>
+  <%= f.collection_check_boxes :destiation_ids, @destinations, :id, :city %>
+  <%= f.submit %>
+<% end %>
+
+<% form_tag airline_path(@airline), method: :delete do %>
+  <%= submit_tag "Delete Airline" %>
+<% end %>

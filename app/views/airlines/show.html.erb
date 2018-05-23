@@ -1,0 +1,13 @@
+<h1> <%= @airline.name %> </h1>
+
+<% if @airline.destinations.length > 0 %>
+  <h3>Airline destinations:</h3>
+  <ul>
+    <% @airline.destinations.each do |d| %>
+    <li> <%= link_to d.city, d %> </li>
+    <% end %>
+  </ul>
+<% end %>
+
+<%= link_to "All Airlines", airlines_path %>
+<%= link_to "Edit this Airline", edit_airline_path %>

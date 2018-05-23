@@ -1,0 +1,10 @@
+<h1>Create new airline</h1>
+<%= link_to "Cancel", airlines_path %>
+
+<%= render "errors/flash_errors" %>
+<%= form_for @airline do |f| %>
+  <%= f.label :name %>
+  <%= f.text_field :name %>
+  <%= f.collection_check_boxes :destination_ids, @destinations, :id, :city %>
+  <%= f.submit %>
+<% end %>

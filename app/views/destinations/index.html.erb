@@ -1,0 +1,9 @@
+<h1> ALL THE GREATEST DESTINATIONS SO FAR </h1>
+
+<%= link_to "Add a new destination!", new_destination_path %>
+
+<ul>
+<% @destinations.each do |destination| %>
+  <li><%= link_to destination.city, destination %></li>
+<% end %>
+</ul>
